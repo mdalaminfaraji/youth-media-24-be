@@ -26,17 +26,30 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 80,
+      "maxLength": 400,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
+    
+"slug": {
+  "type": "uid",
+  "targetField": "title",
+  "required": false
+
+},
+"banglaSlug": {
+  "type": "string",
+  "required": false,
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  }
+}
+,
     "cover": {
       "type": "media",
       "multiple": false,
