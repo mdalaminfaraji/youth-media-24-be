@@ -1,5 +1,5 @@
 {
-  "name": "youth-media-24",
+  "name": "youth-media-24-backend",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -7,29 +7,33 @@
     "build": "strapi build",
     "deploy": "strapi deploy",
     "dev": "cross-env ENV_PATH=./.env.development strapi develop",
-    "seed:example": "node ./scripts/seed.js",
+    "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.0.4",
-    "@strapi/plugin-graphql": "^5.0.5",
-    "@strapi/plugin-users-permissions": "5.0.4",
-    "@strapi/strapi": "5.0.4",
-    "fs-extra": "^10.0.0",
-    "mime-types": "^2.1.27",
-    "pg": "8.8.0",
+    "@strapi/plugin-cloud": "5.5.1",
+    "@strapi/plugin-graphql": "^5.5.1",
+    "@strapi/plugin-users-permissions": "5.5.1",
+    "@strapi/strapi": "5.5.1",
+    "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0",
     "transliteration": "^2.3.5"
   },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "bc3bd0fc-d3e3-493b-bd28-5a54d5164b79"
+    "uuid": "65fcf6de-d551-4d39-bf93-bde9ad3cb947"
   }
 }
