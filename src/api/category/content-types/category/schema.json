@@ -18,13 +18,13 @@
   "attributes": {
     "name": {
       "type": "string",
+      "required": true,
+      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "required": true,
-      "unique": true
+      }
     },
     "description": {
       "type": "text",

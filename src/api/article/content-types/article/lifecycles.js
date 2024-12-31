@@ -1,17 +1,7 @@
-import { slugify } from "transliteration";
+const { slugify } = require("transliteration");
 
-interface EventParams {
-  params: {
-    data: {
-      title?: string;
-      slug?: string;
-      banglaSlug?: string;
-    };
-  };
-}
-
-const slugGenerationHooks = {
-  async beforeCreate(event: EventParams): Promise<void> {
+module.exports = {
+  async beforeCreate(event) {
     const { data } = event.params;
 
     if (data.title) {
@@ -28,15 +18,13 @@ const slugGenerationHooks = {
       }
     }
   },
-
-  async beforeUpdate(event: EventParams): Promise<void> {
+  async beforeUpdate(event) {
     const { data } = event.params;
 
     if (data.title) {
       if (!data.slug) {
         data.slug = slugify(data.title, { lowercase: true, separator: "-" });
       }
-
       if (!data.banglaSlug) {
         data.banglaSlug = data.title
           .replace(/\s+/g, "-")
@@ -45,5 +33,3 @@ const slugGenerationHooks = {
     }
   },
 };
-
-export default slugGenerationHooks;

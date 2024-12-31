@@ -17,39 +17,32 @@
   },
   "attributes": {
     "title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string",
-      "required": true,
-      "unique": true
+      }
     },
     "description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "text"
+      }
     },
     "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "type": "uid",
       "targetField": "title"
     },
     "banglaSlug": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string"
+      }
     },
     "cover": {
       "type": "media",
@@ -68,11 +61,6 @@
       }
     },
     "newsStatus": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "type": "enumeration",
       "enum": [
         "draft",
@@ -80,39 +68,43 @@
         "approved",
         "rejected"
       ],
-      "default": "draft"
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "rejectionReason": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "text"
+      }
     },
     "views": {
+      "type": "integer",
+      "default": 0,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "integer"
+      }
     },
     "likes": {
+      "type": "integer",
+      "default": 0,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "integer"
+      }
     },
-    "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "blocks"
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
     },
     "category": {
       "type": "relation",
@@ -126,11 +118,22 @@
       "target": "api::comment.comment",
       "mappedBy": "article"
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+    "isTreanding": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "blocks"
     }
   }
 }
